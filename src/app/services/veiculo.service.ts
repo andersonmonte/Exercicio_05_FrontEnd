@@ -36,6 +36,15 @@ export class VeiculoService {
       )
   }
 
+    // Obtem veículos por um parâmetro de busca
+    getVeiculoByParam(parametro: string): Observable<Veiculo> {
+      return this.httpClient.get<Veiculo>(this.url + '/' + 'find')
+        .pipe(
+          retry(2),
+          catchError(this.handleError)
+        )
+    }
+
   // salva um veículo
   saveVeiculo(veiculo: Veiculo): Observable<Veiculo> {
     return this.httpClient.post<Veiculo>(this.url, JSON.stringify(veiculo), this.httpOptions)

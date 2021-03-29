@@ -5,7 +5,14 @@
 </nav>
 <div class="container">
   <div class="card list-car">
-    <h5 class="card-header">Lista de carros</h5>
+    <h5 class="card-header">Veículos não Vendidos</h5>
+    <div class="card-body">
+      <label >{{ quantidadeNaoVendidos }}</label>
+    </div>
+  </div>
+
+  <div class="card list-car">
+    <h5 class="card-header">Lista de Veículos</h5>
     <div class="card-body">
       <table class="table">
           <thead>
@@ -34,7 +41,7 @@
   </div>
 
   <div class="card add-car">
-    <h5 class="card-header">Adicionar/Atualizar carro</h5>
+    <h5 class="card-header">Adicionar/Atualizar Veículo</h5>
     <div class="card-body">
         <form id="add-form" (ngSubmit)="f.form.valid && saveVeiculo(f)" #f="ngForm" novalidate>
           <div class="form-group">

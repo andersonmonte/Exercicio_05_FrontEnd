@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VeiculoService } from './services/veiculo.service';
 import { Veiculo } from './models/veiculo';
 import { NgForm } from '@angular/forms';
+import { QuantidadeMarcas } from './models/quantidademarcas';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit {
 
   veiculo = {} as Veiculo;
   veiculos: Veiculo[];
-  marca: string;
+  quantidadeMarcas: QuantidadeMarcas[];
+  quantidadeNaoVendidos: number;
 
   constructor(private veiculoService: VeiculoService) {}
   
@@ -38,6 +40,10 @@ export class AppComponent implements OnInit {
   getVeiculos() {
     this.veiculoService.getVeiculos().subscribe((veiculos: Veiculo[]) => {
       this.veiculos = veiculos;
+      // Atualiza a contagem de veículos não vendidos
+      this.quantidadeNaoVendidos = this.veiculos.filter(v => v.vendido == false).length;
+      // Atualiza a quantidade de veículos por marca
+      
     });
   }
 

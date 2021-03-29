@@ -5,4 +5,5 @@ export interface Veiculo {
     ano: number;
     descricao: string;
     vendido: boolean;
+    created: Date;
 }
