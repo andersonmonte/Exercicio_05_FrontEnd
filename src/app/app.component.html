@@ -39,12 +39,34 @@
         <form id="add-form" (ngSubmit)="f.form.valid && saveVeiculo(f)" #f="ngForm" novalidate>
           <div class="form-group">
               <label for="veiculo">Modelo</label>
-              <input type="text" [(ngModel)]="veiculo.veiculo" id="veiculo" name="veiculo" #model="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && veiculo.invalid }" placeholder="Digite o modelo">
+              <input type="text" [(ngModel)]="veiculo.veiculo" id="veiculo" name="veiculo" #model="ngModel" required class="form-control" placeholder="Digite o modelo">
           </div>
           <div class="form-group">
             <label for="marca">Marca</label>
-            <input type="text" [(ngModel)]="veiculo.marca" id="marca" name="marca" #model="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && marca.invalid }" placeholder="Digite a marca">
-        </div>
+            <mat-form-field appearance="fill">
+              <select matNativeControl [(ngModel)]="veiculo.marca" name="car">
+                <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+                <option value="CHEVROLET">CHEVROLET</option>
+                <option value="FORD">FORD</option>
+                <option value="FIAT">FIAT</option>
+                <option value="RENAULT">RENAULT</option>
+                <option value="MITSUBISHI">MITSUBISHI</option>
+                <option value="HONDA">HONDA</option>
+                <option value="HYUNDAI">HYUNDAI</option>
+              </select>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label for="ano">Ano</label>
+            <input type="number" [(ngModel)]="veiculo.ano" id="ano" name="ano" #model="ngModel" required class="form-control" placeholder="Digite o ano">
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" [(ngModel)]="veiculo.descricao" id="descricao" name="descricao" #model="ngModel" required class="form-control" placeholder="Digite a descrição">
+          </div>
+          <div class="form-group">
+            <mat-checkbox labelPosition="before" [(ngModel)]="veiculo.vendido" id="vendido" name="vendido">Vendido</mat-checkbox>
+          </div>
           <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
           <button type="reset" class="btn btn-secondary btn-add-car" (click)="cleanForm(f)">Cancelar</button>
         </form>

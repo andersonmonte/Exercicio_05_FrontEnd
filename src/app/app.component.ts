@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { VeiculoService } from './services/veiculo.service';
 import { Veiculo } from './models/veiculo';
 import { NgForm } from '@angular/forms';
-import { Console } from 'node:console';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +12,12 @@ export class AppComponent implements OnInit {
 
   veiculo = {} as Veiculo;
   veiculos: Veiculo[];
+  marca: string;
 
   constructor(private veiculoService: VeiculoService) {}
   
   ngOnInit() {
+    this.veiculo.vendido = false;
     this.getVeiculos();
   }
 
