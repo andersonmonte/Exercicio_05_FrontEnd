@@ -1,10 +1,10 @@
 # Exercicio05FrontEnd
 
-Este proejto foi criado utilizando [Angular CLI](https://github.com/angular/angular-cli) versão 10.1.4.
+Este projeto foi criado utilizando Angular versão 10.
 
 ## Como rodar o projeto
 
-Primeramente, você precisará baixar e instalar Node.js: <br/>
+Primeramente, você precisará baixar e instalar o Node.js: <br/>
 
 https://nodejs.org/download/release/v12.18.4/ (npm 6.14.6 está incluso)
 
