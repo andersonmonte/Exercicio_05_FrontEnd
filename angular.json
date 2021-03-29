@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Exercicio05-FrontEnd"
+    }
+  },
+  "defaultProject": "Exercicio05-FrontEnd",
+  "cli": {
+    "analytics": "d22f38dc-16bc-4365-b0e3-827c3399c3fa"
+  }
 }
